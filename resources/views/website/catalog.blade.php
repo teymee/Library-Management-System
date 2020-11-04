@@ -46,19 +46,7 @@
                         <!--End Nav Button  -->
                     </div>
                     <div class="select-this d-flex">
-                        <!--                        <div class="featured">-->
-                        <!--                            <span>Short by: </span>-->
-                        <!--                        </div>-->
-                        <!--                        <form action="#">-->
-                        <!--                            <div class="select-itms">-->
-                        <!--                                <select name="select" id="select1">-->
-                        <!--                                    <option value="">Featured</option>-->
-                        <!--                                    <option value="">Featured A</option>-->
-                        <!--                                    <option value="">Featured B</option>-->
-                        <!--                                    <option value="">Featured C</option>-->
-                        <!--                                </select>-->
-                        <!--                            </div>-->
-                        <!--                        </form>-->
+
                     </div>
                 </div>
                 <!-- Nav Card -->
