@@ -58,7 +58,7 @@
                                 <div class="col-xl-4 col-lg-4 col-md-6">
                                     <div class="single-product mb-60">
                                         <div class="product-img">
-                                            <img src="{{asset('storage/'.$book->images)}}" alt=""  style="width: 270px; height: 280px; border-radius: 10px;">
+                                            <img src="{{asset('storage/'.$book->images)}}" alt=""  style="width: 200px; height: 250px; border-radius: 10px;">
                                         </div>
                                         <div class="product-caption">
                                             <h4><a href="#">{{$book->name}}</a></h4> <br>
@@ -81,7 +81,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="{{asset('storage/'.$book->images)}}" alt=""  style="width: 270px; height: 280px; border-radius: 10px;">
+                                        <img src="{{asset('storage/'.$book->images)}}" alt=""  style="width: 200px; height: 250px; border-radius: 10px;">
                                     </div>
                                     <div class="product-caption">
 
@@ -105,7 +105,7 @@
                                 <div class="col-xl-4 col-lg-4 col-md-6">
                                     <div class="single-product mb-60">
                                         <div class="product-img">
-                                            <img src="{{asset('storage/'.$book->images)}}" alt=""  style="width: 270px; height: 280px; border-radius: 10px;">
+                                            <img src="{{asset('storage/'.$book->images)}}" alt=""  style="width: 200px; height: 250px; border-radius: 10px;">
                                         </div>
                                         <div class="product-caption">
                                             <h4><a href="#">{{$book->name}}</a></h4> <br>
@@ -210,10 +210,6 @@
                             </div>
 
 
-
-{{--                            <div class="gallery-items">--}}
-{{--                                <img src="website/assets/img/gallery/gallery1.jpg" alt="">--}}
-{{--                            </div>--}}
 
                         </div>
 

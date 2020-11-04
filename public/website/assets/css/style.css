@@ -3558,7 +3558,7 @@ input:focus {
 /* line 108, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_headerMenu.scss */
 .header-bottom .main-menu ul li.hot::before {
   position: absolute;
-  content: "HOT";
+  content: "NEW";
   background: #ff003c;
   color: #fff;
   text-align: center;
