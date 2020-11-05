@@ -1,7 +1,10 @@
 @extends('admin.layout')
 
 @section('content')
+
+
     <main class="app-content">
+
         <div class="app-title">
             <div>
                 <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
@@ -12,9 +15,12 @@
                 <li class="breadcrumb-item"><a href="/" target="_blank">Website</a></li>
             </ul>
         </div>
+
+
         <div class="row">
+
             <div class="col-md-6 col-lg-3">
-                <a href="approved_users.php" style="text-decoration: none">
+                <a href="/users" style="text-decoration: none">
                     <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
                         <div class="info">
                             <h6 style="font-weight:400;">TOTAL USERS</h6>
@@ -22,8 +28,9 @@
                         </div>
                     </div>
                 </a>
-
             </div>
+
+
             <div class="col-md-6 col-lg-3">
                 <a href="/books" style="text-decoration: none">
                     <div class="widget-small info coloured-icon"><i class="icon fas fa-book fa-3x"></i>
@@ -35,6 +42,8 @@
                     </div>
                 </a>
             </div>
+
+
             <div class="col-md-6 col-lg-3">
                 <a href="/pending_requests" style="text-decoration: none">
                     <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
@@ -45,6 +54,8 @@
                     </div>
                 </a>
             </div>
+
+
             <div class="col-md-6 col-lg-3">
                 <a href="/accepted_request" style="text-decoration: none">
                     <div class="widget-small danger coloured-icon"><i class="icon fa fa-star fa-3x"></i>
@@ -55,8 +66,15 @@
                     </div>
                 </a>
             </div>
+
+
         </div>
+
+
+
         <div class="row">
+
+
             <div class="col-md-6">
                 <div class="tile">
                     <h3 class="tile-title">Monthly Sales</h3>
@@ -65,6 +83,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="tile">
                     <h3 class="tile-title">Support Requests</h3>
@@ -73,6 +92,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
 @endsection

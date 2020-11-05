@@ -31,9 +31,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+
                                     @foreach ($user as $requests)
-
-
 
                                         <tr>
                                             <td class="justify-content-center"><img
@@ -41,12 +40,7 @@
                                                     height="100" width="100" style="border-radius: 10px"></td>
                                             <td>{{$requests->book_name}}</td>
                                             <td>{{$requests->book_author}}</td>
-
                                             <td>{{$requests->reason}}</td>
-
-
-
-
                                         </tr>
 
                                     </tbody>

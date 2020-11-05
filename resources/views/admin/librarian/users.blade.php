@@ -4,7 +4,7 @@
     <main class="app-content">
         <div class="app-title">
             <div>
-                <h1><i class="fa fa-th-list"></i>Users</h1>
+                <h1><i class="fa fa-th-list"></i> Users</h1>
                 <p>Table to display analytical data effectively</p>
             </div>
             <ul class="app-breadcrumb breadcrumb side">
@@ -12,6 +12,7 @@
                 <li class="breadcrumb-item"><a href="/" target="_blank">Website</a></li>
             </ul>
         </div>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="tile">
@@ -27,7 +28,6 @@
                                     <th>Email</th>
                                     <th>Phone.no</th>
                                     <th>Address</th>
-{{--                                    <th>Status</th>--}}
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -41,7 +41,6 @@
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->address}}</td>
-{{--                                    <td>{{$user->}}</td>--}}
                                     <td>
                                         <form action="/changeStatus/{{$user->id}}" method="post">
                                             @csrf

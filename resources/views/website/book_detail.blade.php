@@ -362,7 +362,7 @@
             <div class="col-lg-12 row justify-content-center">
                 <img
                     src="{{asset('storage/'.$book->images)}}"
-                    alt="" style="width: 290px; height: 300px; border-radius: 10px;">
+                    alt="" style="width: 250px; height: 300px;  border-radius: 10px;">
                 <!--          <div class="product_img_slide owl-carousel">-->
                 <!--            <div class="single_product_img">-->
                 <!--              <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">-->

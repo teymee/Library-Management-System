@@ -21,6 +21,7 @@
 
 @section('content')
 <main class="app-content">
+
     <div class="app-title">
         <div>
             <h1><i class="fa fa-th-list"></i> Books</h1>
@@ -31,6 +32,16 @@
             <li class="breadcrumb-item"><a href="/" target="_blank">Website</a></li>
         </ul>
     </div>
+
+
+    @if(session()->has('session_message'))
+
+        <div class="alert alert-success col-12">
+            <p class="text-center"><strong>{{session('session_message')}}</strong></p>
+        </div>
+
+    @endif
+
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
@@ -67,7 +78,7 @@
                                 <td>{{$book->quantity}}</td>
                                 <td>{{$book->pages}}</td>
                                 <td>{{$book->price}}</td>
-                                <td><a href="{{$book->id}}"><button class="btn btn-success">Edit</button></a>
+                                <td><a href="/edit/{{$book->id}}"><button class="btn btn-success">Edit</button></a>
 
                                 </td>
                                 <td><a  href="?delete_book={{$book->id}} ?>"><button class="btn btn-danger" >Delete</button></a></td>

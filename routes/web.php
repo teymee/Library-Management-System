@@ -47,8 +47,11 @@ Route::post('/add_category',            'CategoryController@store')->middleware(
 
                                 //BOOK CONTROLLER
 Route::get('/add_book',                 'BookController@index')->middleware('auth', 'can:allowLib');
+Route::get('/edit/{book}',              'BookController@edit')->middleware('auth', 'can:allowLib');
 Route::post('/add_book',                'BookController@store')->middleware('auth', 'can:allowLib');
+Route::put('/update_book/{book}',       'BookController@update')->middleware('auth', 'can:allowLib');
 Route::get('/books',                    'BookController@show')->middleware('auth', 'can:allowLib');
+
 
                                  //LIBRARIAN REQUEST
 Route::get('/pending_requests',         'RequestsController@pendingRequests')->middleware('auth', 'can:allowLib');

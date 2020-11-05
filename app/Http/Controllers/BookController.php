@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Book;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
@@ -20,7 +21,7 @@ class BookController extends Controller
         request()->validate([
             'name'          => 'required',
             'author'        => 'required',
-            'cat_id'        => 'required',
+            'cat_id'        => 'required|exists:categories,id',
             'synopsis'       => 'required',
             'pub_date'      => 'required',
             'lease_week'    => 'required',
@@ -51,5 +52,42 @@ class BookController extends Controller
         $books = Book::orderBy('name', 'asc')->paginate(10);
 
         return view ('admin.librarian.display_books', compact('books'));
+    }
+
+    public function edit(Book $book)
+    {
+        $categories = Category::orderBy('name', 'asc')->get();
+        return view('admin.librarian.edit_book', compact('book','categories'));
+    }
+
+    public function update(Book $book)
+    {
+        $details = request()->validate([
+            'name'          => 'required',
+            'author'        => 'required',
+            'cat_id'        => 'required|exists:categories,id',
+            'synopsis'       => 'required',
+            'pub_date'      => 'required',
+            'lease_week'    => 'required',
+            'pages'         => 'required',
+            'images'        => 'nullable',
+            'price'         => 'required',
+            'quantity'      =>' required'
+        ]);
+
+        $firstImage = request('firstImage');
+        if(request()->hasFile('images'))
+        {
+            Storage::delete('public/'.$firstImage );
+            $fileNameToStore = request('images')->store('book_images', 'public');
+
+        }else{
+            $fileNameToStore = $firstImage;
+        }
+
+        $book->update($details);
+        $book->images = $fileNameToStore;
+        $book->save();
+        return redirect('/books')->with('session_message', \request('name') . ' updated successfully');
     }
 }

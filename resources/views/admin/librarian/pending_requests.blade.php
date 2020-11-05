@@ -5,7 +5,7 @@
     <main class="app-content">
         <div class="app-title">
             <div>
-                <h1><i class="fa fa-th-list"></i>Pending Requests</h1>
+                <h1><i class="fa fa-th-list"></i> Pending Requests</h1>
                 <p>Table to display analytical data effectively</p>
             </div>
             <ul class="app-breadcrumb breadcrumb side">
@@ -62,16 +62,8 @@
                                             <td>{{$requests->book_name}}</td>
                                             <td>{{$requests->book_author}}</td>
                                             <td>
-{{--                                                <form action="/status" method="post">--}}
-{{--                                                    @csrf--}}
-{{--                                                    @method('PUT')--}}
-{{--                                                    <input type="hidden" value="{{$requests->book_name}}"--}}
-{{--                                                           name="book_name">--}}
-{{--                                                    <input type="hidden" value="{{auth()->user()->id}}" name="user_id">--}}
-{{--                                                    <button class="btn btn-success">Accept</button>--}}
-{{--                                                </form>--}}
-                                                <a href="accept/{{$requests->id}}"><button class="btn btn-success">Accept</button></a>
 
+                                                <a href="accept/{{$requests->id}}"><button class="btn btn-success">Accept</button></a>
                                             </td>
                                             <td>
                                                 <a href="decline/{{$requests->id}}"><button class="btn btn-danger">Decline</button></a>
