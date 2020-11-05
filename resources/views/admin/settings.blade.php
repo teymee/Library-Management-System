@@ -15,45 +15,57 @@
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
-{{--                <img class="rounded-circle mx-auto d-block row" src="profile_picture/<?php echo $pro_pic ?>"--}}
-{{--                     style="width: 200px; height: 200px">--}}
+                <img class="rounded-circle mx-auto d-block" src="{{asset('storage/'.auth()->user()->avatar)}}" style="width: 200px; height: 200px">
                 <br>
 
                 <div class="container">
                     <div class="row">
-                        <form class="col-md-6" method="post" action="code.php" enctype="multipart/form-data">
+                        <form class="col-md-6" method="post" action="/update_settings/{{auth()->user()->id}}"
+                              enctype="multipart/form-data" style="margin-top: 80px;">
+                            @csrf
+                            @method('PUT')
 
                             <div>
-{{--                                <input type="hidden" name="lib_id" value="<?php echo $lib_id ?>">--}}
+
                                 <label class="control-label"> <strong>Update Profile Picture:</strong> </label>
                                 <input class="form-control" type="file" name="pro_pic" required>
                             </div>
                             <br>
-                            <div>
-                                <label class="control-label"><strong> Password:</strong> </label>
-                                <input class="form-control" type="text" name="pwd" required>
-                            </div>
-                            <br>
-                            <button class="btn btn-primary col-md-12 " type="submit" name="update_picture">Update
+                            <button class="btn btn-primary col-md-12 " type="submit">Update
                                 Picture
                             </button>
 
                         </form>
 
-                        <form class="col-md-6" method="post" action="code.php" enctype="multipart/form-data">
+
+
+
+                        <form class="col-md-6" method="post" action="/update_password/{{auth()->user()->id}}"
+                              enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+
+
 
                             <div>
-{{--                                <input type="hidden" name="lib_id" value="<?php echo $lib_id ?>">--}}
-                                <label class="control-label"><strong> Old Password:</strong> </label>
-                                <input class="form-control" type="text" name="old_pwd" required>
-                            </div>
-                            <br>
-                            <div>
                                 <label class="control-label"><strong> New Password:</strong> </label>
-                                <input class="form-control" type="text" name="new_pwd" required>
+                                <input class="form-control" type="password" name="password" required>
+
+                                @error('password')
+                                <p class="text-danger"><small>{{$message}}</small></p>
+                                @enderror
                             </div>
                             <br>
-                            <button class="btn btn-primary col-md-12 " type="submit" name="update_pwd">Update
+
+                            <div>
+
+                                <label class="control-label"><strong> Confirm Password:</strong> </label>
+                                <input type="password" class="form-control" id="confirm"  name="password_confirmation"
+                                       style="@error('password_confirmation') border-color:red; @enderror"
+                                />
+                            </div>
+                            <br>
+                            <button class="btn btn-primary col-md-12 " type="submit">Update
                                 Password
                             </button>
                         </form>

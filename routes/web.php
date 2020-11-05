@@ -78,8 +78,11 @@ Route::put('/status',                   'RequestsController@status')->middleware
 
 
                                  //DASHBOARD PROFILE
-Route::get('/profile',                  'ProfileController@index');
-Route::get('/settings',                 'ProfileController@settings');
+Route::get('/profile',                  'ProfileController@index')->middleware('auth');
+Route::get('/settings',                 'ProfileController@settings')->middleware('auth');
+Route::put('/update_profile/{user}',    'ProfileController@update')->middleware('auth');
+Route::put('/update_settings/{user}',     'ProfileController@updateSettingPic')->middleware('auth');
+Route::put('/update_password/{user}',     'ProfileController@updatePassword')->middleware('auth');
 
 Auth::routes();
 

@@ -22,9 +22,12 @@
             <div class="tile">
 
 
-                <form  method="post" action="code.php" >
+                <form  method="post" action="/update_profile/{{auth()->user()->id}}" >
+                    @csrf
+                    @method('PUT')
+
                     <div class="alert alert-success col-md-6 mx-auto d-block">
-                        <p> To update your Profile picture and Password go to  <a href="settings.php" class="alert-link">Settings</a>  page.</p>
+                        <p> To update your Profile picture and Password go to  <a href="/settings" class="alert-link">Settings</a>  page.</p>
                     </div>
                     <img class="rounded-circle mx-auto d-block" src="{{asset('storage/'.auth()->user()->avatar)}}" style="width: 200px; height: 200px">
                     <br>
@@ -35,15 +38,43 @@
                             <input class="form-control" style="width: 250px" type="text" name="lib_id"  value="{{auth()->user()->user_id}}" readonly>
                         </div>
                         <br>
+
                         <div>
-                            <label class="control-label"><strong> Name:</strong> </label>
-                            <input class="form-control" style="width: 250px" type="text"  value="{{auth()->user()->lastname .' '. auth()->user()->firstname }}"  readonly>
+                            <label class="control-label"><strong> Lastname:</strong> </label>
+                            <input class="form-control" style="width: 250px" type="text" name="lastname"  value="{{auth()->user()->lastname}}" >
+
+                            @error('lastname')
+                            <p class="text-danger"><small>{{$message}}</small></p>
+                            @enderror
+                        </div>
+                        <br>
+                        <div>
+                            <label class="control-label"><strong> Firstname:</strong> </label>
+                            <input class="form-control" style="width: 250px" type="text" name="firstname" value="{{ auth()->user()->firstname }}">
+
+                            @error('firstname')
+                            <p class="text-danger"><small>{{$message}}</small></p>
+                            @enderror
+                        </div>
+                        <br>
+
+                        <div>
+                            <label class="control-label"><strong> Phone:</strong> </label>
+                            <input class="form-control" style="width: 250px" type="text" name="phone"  value="{{auth()->user()->phone}}" >
+
+                            @error('phone')
+                            <p class="text-danger"><small>{{$message}}</small></p>
+                            @enderror
                         </div>
                         <br>
                         <div>
                             <label class="control-label"><strong> Address:</strong> </label>
-                            <textarea class="form-control"  name="" id="" cols="4" rows="4">{{auth()->user()->address}}</textarea>
+                            <textarea class="form-control" name="address"  name="" id="" cols="3" rows="2">{{auth()->user()->address}}</textarea>
 {{--                            <input class="form-control" style="width: 250px" type="text" name="username"  value="<?php echo $profile['username']?>" >--}}
+
+                            @error('address')
+                            <p  class="text-danger"><small>{{$message}}</small></p>
+                            @enderror
                         </div>
                         <br>
 
